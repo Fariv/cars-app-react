@@ -2,7 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { BookCard } from "../../components/bookCard";
+import { Marginer } from "../../components/marginer";
 import { NavBar } from "../../components/navbar";
+import { AboutUs } from "./aboutUs";
+import { BookingSteps } from "./bookingSteps";
 import { TopSection } from "./topsection";
 
 const PageContainer = styled.div`
@@ -13,6 +16,7 @@ const PageContainer = styled.div`
         h-full
         items-center
         overflow-x-hidden
+        overflow-y-hidden
     `}
 `;
 
@@ -22,5 +26,9 @@ export function HomePage() {
         <NavBar />
         <TopSection />
         <BookCard />
+        <Marginer direction="vertical" margin="4em" />
+        <BookingSteps />
+        <Marginer direction="vertical" margin="5em" />
+        <AboutUs />
     </PageContainer>
 }
