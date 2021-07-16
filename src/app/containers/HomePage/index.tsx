@@ -2,9 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { BookCard } from "../../components/bookCard";
+import { Footer } from "../../components/footer";
 import { Marginer } from "../../components/marginer";
 import { NavBar } from "../../components/navbar";
 import { AboutUs } from "./aboutUs";
+import { BestCars } from "./bestCars";
 import { BookingSteps } from "./bookingSteps";
 import { TopSection } from "./topsection";
 
@@ -30,5 +32,8 @@ export function HomePage() {
         <BookingSteps />
         <Marginer direction="vertical" margin="5em" />
         <AboutUs />
+        <Marginer direction="vertical" margin="5em" />
+        <BestCars />
+        <Footer />
     </PageContainer>
 }

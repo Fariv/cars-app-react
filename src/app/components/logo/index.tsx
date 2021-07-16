@@ -4,6 +4,10 @@ import tw from "twin.macro";
 
 import CarLogoImg from "../../../assets/images/car-logo.png";
 
+interface ILogoProps {
+    color?: "white" | "dark";
+}
+
 const LogoContainer = styled.div`
     ${tw`
         flex
@@ -16,9 +20,9 @@ const LogoText = styled.div`
         text-xl
         md:text-2xl
         font-bold
-        text-black
         m-1
     `}
+    ${({color} : any) => color === "white"? tw`text-white` : tw`text-black` }
 `;
 
 const Image = styled.div`
@@ -30,12 +34,14 @@ const Image = styled.div`
     }
 `;
 
-export function Logo() {
+export function Logo(props: ILogoProps) {
+
+    const { color } = props;
 
     return <LogoContainer>
         <Image>
             <img src={CarLogoImg} alt="car-logo"/>
         </Image>
-        <LogoText>Rentacar.</LogoText>
+        <LogoText color={color || "dark"}>Rentacar.</LogoText>
     </LogoContainer>
 }
