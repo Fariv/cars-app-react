@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { faCalendarAlt, faCaretDown, faCaretSquareDown, faCaretSquareUp, faCaretUp } from "@fortawesome/free-solid-svg-icons";
+import { faCalendarAlt, faCaretDown, faCaretUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import tw from "twin.macro";
@@ -133,7 +133,7 @@ export function BookCard(){
         dateCalenderObj = <DateCalendar value={returnDate} id="return" onChange={setReturnDate} wd={windowDimensions} elementRef={CardContainerRef} />;
         setReturnDateCalenderDom(dateCalenderObj);
         console.log(CardContainerRef);
-    }, []);
+    }, [startDate, returnDate, windowDimensions]);
     return <CardContainer ref={CardContainerRef}>
         <ItemContainer>
             <Icon>
